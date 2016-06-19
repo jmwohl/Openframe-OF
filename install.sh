@@ -19,7 +19,7 @@ if [ $os == "Linux" ]; then
     # same for any debian disto
 
     # Do we want to lock this to a specific OF release rather than pulling from master?
-    sudo bash -c "$(curl https://raw.githubusercontent.com/openframeworks/openFrameworks/master/scripts/linux/debian/install_dependencies.sh)"
+    sudo bash ./install_dependencies.sh
 
     if [ $arq == "armv7l" ]; then
         # on RaspberryPi 2 or higher
