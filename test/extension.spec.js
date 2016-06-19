@@ -1,16 +1,16 @@
 var assert = require('assert'),
     Extension = require('openframe-extension'),
-    VideoExtension = require('../extension');
+    OpenFrameworksExtension = require('../extension');
 
 describe('instantiation', function() {
     it('should be an instance of type Extension', function() {
-        assert(VideoExtension instanceof Extension);
+        assert(OpenFrameworksExtension instanceof Extension);
     });
 });
 
 describe('properties', function() {
     it('should include all required format properties', function() {
-        var format = VideoExtension.props.format;
+        var format = OpenFrameworksExtension.props.format;
 
         assert(format.name);
         assert(typeof format.name === 'string');
@@ -31,29 +31,4 @@ describe('properties', function() {
         assert(format.end_command);
         assert(typeof format.end_command === 'string');
     });
-
-    it('should pass arguments to start_command', function() {
-        var format = VideoExtension.props.format,
-            config = {
-                '--aspect-mode': 'fit'
-            },
-            command = format.start_command(config),
-            expected = 'omxplayer --loop --aspect-mode fit -b $filepath';
-
-        assert(typeof command === 'string');
-        assert.equal(command, expected);
-    });
-
-    it('should override default arguments in start_command', function() {
-        var format = VideoExtension.props.format,
-            config = {
-                '--loop': false
-            },
-            command = format.start_command(config),
-            expected = 'omxplayer --aspect-mode fill -b $filepath';
-
-        assert(typeof command === 'string');
-        assert.equal(command, expected);
-    });
-
 });
