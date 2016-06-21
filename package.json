@@ -1,6 +1,6 @@
 {
   "name": "openframe-of",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Openframe extension which adds support for openFrameworks executables.",
   "main": "extension.js",
   "scripts": {
