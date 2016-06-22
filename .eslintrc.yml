@@ -9,6 +9,7 @@ rules:
   linebreak-style: [2, unix]
   no-console: [0]
   no-unused-vars: [1]
+  no-octal: [0]
   # commas go last
   comma-style: [1, last]
   # variable comes before literal in conditional

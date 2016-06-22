@@ -21,7 +21,7 @@ module.exports = new Extension({
         // how do start this type of artwork? currently two token replacements, $filepath and $url
         'start_command': function(args, tokens) {
             // make sure the file is executable
-            fs.chmodSync(tokens.$filepath, 755);
+            fs.chmodSync(tokens.$filepath, 0755);
             // start command just executes the file ($filepath is absolute, includes leading slash)
             return '.$filepath';
         },

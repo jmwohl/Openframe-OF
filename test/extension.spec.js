@@ -1,4 +1,5 @@
 var assert = require('assert'),
+    fs = require('fs'),
     Extension = require('openframe-extension'),
     OpenFrameworksExtension = require('../extension');
 
@@ -24,11 +25,41 @@ describe('properties', function() {
         assert(format.start_command);
         assert(typeof format.start_command === 'string' || typeof format.start_command === 'function');
 
-        if (typeof format.start_command === 'function') {
-            assert(typeof format.start_command() === 'string');
-        }
-
         assert(format.end_command);
         assert(typeof format.end_command === 'string');
     });
+});
+
+describe('start_command', function() {
+    var tokens = {
+        $filepath: __dirname + '/test.sh'
+    };
+
+    before(function() {
+        fs.chmodSync(tokens.$filepath, 777);
+    });
+
+    it('should return a string', function() {
+        var format = OpenFrameworksExtension.props.format,
+            command = format.start_command(null, tokens),
+            expected = '.$filepath';
+
+        assert(typeof command === 'string');
+        assert.equal(command, expected);
+    });
+
+    it('should make the file specified by tokens.$filepath executable', function() {
+        var format = OpenFrameworksExtension.props.format,
+            expected = 100755,
+            stats;
+
+        // execute start command
+        format.start_command(null, tokens);
+        stats = fs.statSync(tokens.$filepath);
+
+        console.log(stats.mode);
+
+        assert.equal(parseInt(stats.mode.toString(8), 10), expected);
+    });
+
 });
