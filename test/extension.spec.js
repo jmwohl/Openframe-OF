@@ -57,8 +57,6 @@ describe('start_command', function() {
         format.start_command(null, tokens);
         stats = fs.statSync(tokens.$filepath);
 
-        console.log(stats.mode);
-
         assert.equal(parseInt(stats.mode.toString(8), 10), expected);
     });
 
