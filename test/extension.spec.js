@@ -42,7 +42,7 @@ describe('start_command', function() {
     it('should return a string', function() {
         var format = OpenFrameworksExtension.props.format,
             command = format.start_command(null, tokens),
-            expected = '.$filepath';
+            expected = '$filepath';
 
         assert(typeof command === 'string');
         assert.equal(command, expected);

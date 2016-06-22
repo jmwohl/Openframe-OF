@@ -23,7 +23,7 @@ module.exports = new Extension({
             // make sure the file is executable
             fs.chmodSync(tokens.$filepath, 0755);
             // start command just executes the file ($filepath is absolute, includes leading slash)
-            return '.$filepath';
+            return '$filepath';
         },
         // how do we stop this type of artwork?
         'end_command': 'sudo pkill -f $filename'
