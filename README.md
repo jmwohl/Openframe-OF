@@ -18,7 +18,7 @@ This will install the extension on your current frame.
 
 ### Usage
 
-The extension expects the file available at the artwork URL to be an openFrameworks executable compiled for the Raspberry Pi. For more info about developing openFrameworks projects for the Raspberry Pi, see they [great documentation on the openFrameworks site](http://openframeworks.cc/setup/raspberrypi/).
+The extension expects the file available at the artwork URL to be an openFrameworks executable compiled for the Raspberry Pi. For more info about developing openFrameworks projects for the Raspberry Pi, see the [great documentation on the openFrameworks site](http://openframeworks.cc/setup/raspberrypi/).
 
 Once you have a compiled openFrameworks executable, add an Artwork to your [openframe.io](http://openframe.io) account, selecting the 'Other' Artwork format and entering 'openframe-of' in the field.
 
@@ -26,11 +26,11 @@ Any artwork listed with the format 'OF' should work (assuming the poster of the 
 
 ### How it works
 
-It's really simple. Since openFrameworks compiles to an executable, we just need to download the file, make sure it's executable, and execute it. The important thing that this extension does is install the openFrameworks dependencies.
+It's really simple. Since openFrameworks compiles to an executable, we just need to download the file, make sure it's executable, and run it. The important thing that this extension does is install the openFrameworks dependencies.
 
-### Potential issue?
+### Potential issues?
 
-I'm not totally sure how OF addons will work. I think some addons include dependencies, while others might require additional dependencies to be installed on the Pi. This will take some testing and some input from someone more familiar with openFrameworks than myself.
+I'm not totally sure how OFX addons will work. I think some addons include dependencies, while others might require additional dependencies to be installed on the Pi. This will take some testing and some input from someone more familiar with openFrameworks than myself.
 
 --
 
